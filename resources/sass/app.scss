@@ -1,0 +1,60 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+*{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+// Maps
+$grid-breakpoints:(
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+@mixin media-breakpoint-up($breakpoint){
+	@media screen and (min-width: map-get($grid-breakpoints , $breakpoint)){
+		@content;
+	}
+}
+
+
+// custom styles
+
+.header-tittle{
+	background-color: var(--bs-gray);
+	color: white;
+}
+
+// media query
+
+@include media-breakpoint-up(md) {
+	body{
+ 		background-image: url('/img/back.png');
+ 		background-repeat: no-repeat;
+		background-size:contain;
+		background-position:center;
+
+		padding: 0!important;
+		font-size: 1rem;
+	}
+	.header-tittle{
+		color:black;
+		background-color: transparent;
+		text-align:justify;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+
+	body{
+		background-size: 100%;
+		background-position:initial;
+	}
+}
